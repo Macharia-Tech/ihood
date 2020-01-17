@@ -1,6 +1,8 @@
 from django.shortcuts import render ,redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 # Create your views here.
 def signup(request):
@@ -38,7 +40,7 @@ class ProfileList(APIView):
         serializers = ProfileSerializer(all_profile, many=True)
         return Response(serializers.data)    
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def new_profile(request):
     '''
     Used for creating a new profile for the user. It includes a profile photo, a bio and contact 

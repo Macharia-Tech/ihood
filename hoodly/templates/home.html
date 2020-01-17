@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{%block content%}
+
+<!-- Navigation -->
+{% if user.is_authenticated %}
+
+
+<!-- Portfolio -->
+<section class="content-section" id="portfolio">
+  <div class="container">
+    <div class="content-section-heading text-center">
+      <!-- <a class="btn btn-primary btn-xl js-scroll-trigger text-center" href="#homepage"></a> -->
+      <!-- <h3 class="text-secondary mb-0">Posts</h3> -->
+      <h2 class="mb-5" style="text-align: left;">Recent Posts</h2>
+      <div class="row no-gutters">
+        {%for posts in allposts%}
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="{%url 'post' posts.id%}">
+            <span class="caption">
+              <span class="caption-content">
+                <h1 class="btn btn-outline-danger">{{projects.title}}</h1>
+              </span>
+            </span>
+  
+          </a>
+        </div>
+        {%endfor%}
+  
+      </div>
+    </div>
+
+
+    
+  </div>
+
+</section>
+
+<!-- Call to Action -->
+<section class="content-section bg-primary text-white">
+  <div class="container text-center">
+    <div class="container">
+      <h2 class="list-inline mb-5">
+        <h1 class="list-inline-item" href="#">
+          <a>
+            <i class="icon-social-facebook"></i>
+          </a>
+        </h1>
+        <h1 class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </h1>
+        <h1 class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#">
+            <i class="icon-social-github"></i>
+          </a>
+        </h1>
+      </h2>
+    </div>
+
+    <h2 class="mb-4">Copyright &copy; IHOOD</h2>
+
+  </div>
+</section>
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+{% endif %}
+{%endblock%}

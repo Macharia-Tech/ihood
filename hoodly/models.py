@@ -2,33 +2,53 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Neighborhood(models.Model):
-    name = models.CharField(max_length=100)
-    location = models.CharField(max_length=100)
-    n_occupants = models.CharField(max_length=100,blank=True)
-    Admin = models.ForeignKey(User,on_delete=models.CASCADE)
-
+class Profile(models.Model):
+    '''
+    Class that contains User Profile details
+    '''
+    profile_photo=models.ImageField(upload_to='images/',blank=True)
+    bio=models.CharField(max_length=100)
+    contact=models.CharField(max_length=25)
+    editor = models.ForeignKey(User,on_delete=models.CASCADE)
+    
     def __str__(self):
-        return self.name
+        '''
+        Setting up self 
+        '''
+        return self.bio
 
+    @classmethod
+    def get_profile(cls):
+        '''
+        Method to retrieve the profile details
+        '''
+        profile=cls.objects.all()
+        return profile
 
-class Occupants(models.Model):
-    profile_photo=models.ImageField(upload_to='images')
-    name = models.ForeignKey(User)
-    id_number= models.CharField(max_length=100)
-    email=models.EmailField()
-    neighborhood= models.ForeignKey(Neighborhood,on_delete=models.CASCADE)
+    def save_profile(self):
+        '''
+        Method to save the created profile
+        '''
+        self.save()
 
-    def __str__(self):
-        return self.name.username
+    def delete_profile(self):
+        '''
+        Method to delete the profile
+        '''
+        self.delete()
 
+    @classmethod
+    def single_profile(cls,user_id):
+        '''
+        function gets a single profile posted by id
+        '''
+        profile=cls.objects.filter(editor=user_id)
+        return profile
 
-class Business(models.Model):
-    business_name= models.CharField(max_length=100)
-    owner= models.ForeignKey(User)
-    b_email=models.EmailField()
-    description=models.TextField()
-    neighborhood= models.ForeignKey(Neighborhood,on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.business_name
+    @classmethod
+    def get_profilepic_id(cls,imageId):
+        '''
+        function that gets a profilepic id    
+        '''
+        image_id=cls.objects.filter(id=imageId)
+        return image_id   

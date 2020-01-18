@@ -37,7 +37,9 @@
     <div class="card-footer">
     <a href ="{% url 'join_hood' neighbourhood.id %}" class="btn btn-primary btn-sm">Join Hood</a>
     {% if neighbourhood.user_id == user.id %}
-                  <a href="{% url 'edit_hood' neighbourhood.id %}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                  <a href="{% url 'edit_hood' neighbourhood.id %}" class="btn btn-sm btn-info"><
+                      i class="fas fa-edit"></
+                    i></a>
                   {% endif %}
     {% if neighbourhood.user_id == user.id %}
     <a href="{% url 'delete_hood' neighbourhood.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>

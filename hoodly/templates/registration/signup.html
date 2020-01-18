@@ -7,10 +7,6 @@
 {%block content%}
 
 
-
- 
-
-
 <div id="page-top"
   style=" background-image:url(../../static/viti.jpeg);color:white;background-repeat: no-repeat;background-size:cover;">
   
@@ -33,6 +29,10 @@
 
   <div class="container h-100">
     <div class="row h-100">
+      form = ProfileForm(instance=me)
+      
+return render(request,'new_profile.html',{'form':form,'user':user})
+
       <div class="col-lg-7 my-auto">
         <div class="header-content mx-auto">
           <h1 class="mb-5">

@@ -2,9 +2,9 @@ from django.shortcuts import render ,redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import NewPostForm,NewProfileForm
-from .models import Post,Profile
+from .models import Business,Profile
 from django.contrib.auth.models import User
-from .serializer import ProfileSerializer,PostSerializer
+from .serializer import ProfileSerializer,BusinessSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 

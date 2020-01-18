@@ -6,5 +6,5 @@ admin.site.register(Profile)
 admin.site.register(Business)
 admin.site.register(Join)
 admin.site.register(Posts)
-admin.site.register(Comments
+admin.site.register(Comments)
 

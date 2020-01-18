@@ -1,94 +1,73 @@
-{%extends "base.html"%}
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% load static %}
 
-{% load bootstrap4%}
-{%load static%}
-
+{% block styles %}
 {{block.super}}
-{%block content%}
 
-    {{form.media}}
-    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
 
-<body
-    style="background-image:url(../../static/download.jpeg);color: white; background-repeat: no-repeat; background-size:cover;">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <div class="col-sm-6 col-md-6">
-                <ul>
-
-                    <li>
-                        <a class='btn btn-default' href="/accounts/register" style="color:blue;">CREATE ACCOUNT</a>
-                    </li>
-
-
-                </ul>
-            </div>
-
-        </div>
-    </nav>
-    <header class="masthead">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-lg-7 my-auto">
-                    <div class="header-content mx-auto">
-                        <h1 class="mb-5">
-                            <hr style="font-size:50px;">IHOOD</h1>
-
-                    </div>
-                </div>
-                <div class="col-lg-5 my-auto">
-                    <div class="device-container">
-
-
-                        <!-- Empty div -->
-
-                        {% if form.errors %}
-                        <p> Password or Username is incorrect </p>
-                        {% endif %}
-                        <div class="panel panel-default">
-
-                            <div class="panel-heading">
-                                <h3 class="text-center">LOG IN</h3>
-                            </div>
-                            <div class="panel-body">
-
-                                <form action="/accounts/login/" method="post">
-                                    {% csrf_token %}
-                                    {% bootstrap_form form%}
-
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-primary btn-sm" value="Login">
-                                    </div>
-
-                                    <input type="hidden" name="next" value="{{next}}">
-
-                                </form>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- empty div -->
-                    <div class="col-md-4"></div>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    </header>
-    <footer>
-        <div class="container">
-            <p></p>
+{% block content %}
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- Empty div -->
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        {% if form.errors %}
+        <p> Password or Username is incorrect </p>
+        {% endif %}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
+          <div class="well" style="width:100% !important;border: solid green;">
             
-        
+            <div class="well-heading">
+              <h2 class="text-center" style="text-align:center;font-size: 40px;">Sign In</h2>
+            </div>
+            <hr>
+            <div class="panel-body">
+              
+              <form  action="/accounts/login/" method="post" style="text-align:center;font-size: 17px;">
+                {% csrf_token %}
+                {% bootstrap_form form%}
+                
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success btn-lg" value="Login">
+                </div>
+                <br>
+                <p class="have">Don't have an account? <a href="/accounts/register">Sign Up</a> </p>
+                
+                <input type="hidden" name="next" value="{{next}}">
+                
+              </form>
+              
+            </div>
+            
+          </div>
         </div>
-    </footer>
+        
+      </div>
+      <!-- empty div -->
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+  
 </body>
+<style>
+  body{
+    background: rgb(243, 243, 243);
+    font-family: 'Lato', sans-serif;
+  }
+  .btn{
+    width:60%;
+  }
+</style>
 
-</html>
-{%endblock%}
+{% endblock %}

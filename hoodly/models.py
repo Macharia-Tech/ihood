@@ -10,16 +10,8 @@ class Neighbourhood(models.Model):
   class that contains Neighbourhood properties
   '''
   NEIGHBOURHOOD_CHOICES = (
-    ('South B','South B'),
     ('South C','South C'),
     ('Westlands','Westlands'),
-    ('Donholm','Donholm'),
-    ('Ruaka','Ruaka'),
-    ('Imara Daima','Imara Daima'),
-    ('Syokimau','Syokimau'),
-    ('Buruburu','Buruburu'),
-    ('Kinoo','Kinoo'),
-    ('Komarock','Komarock'),
     ('Madaraka','Madaraka'),
     ('Rongai','Rongai'),
     ('Karen','Karen'),

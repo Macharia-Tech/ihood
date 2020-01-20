@@ -37,3 +37,18 @@ Audrey Macharia
 - Run the app
     `python3.6 manage.py runserver`
     `Open terminal on localhost:8000
+
+
+
+## User Stories
+The application user is able to:
+- Create an account and confirm through email verification.
+- Sign in to the application to start using.
+- Find a list of different businesses in my neighborhood.
+- Find Contact Information for the health department and Police authorities near my neighborhood.
+- Create Posts that will be visible to everyone in my neighborhood.
+- Change My neighborhood when I decide to move out.
+- Search for Neighbourhoods
+- Only view details of a single neighborhood.
+- View my profile page.
+     

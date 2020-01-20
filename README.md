@@ -61,3 +61,7 @@ The application user is able to:
 - Postgresql
 - Heroku(Deployment)
 - Visual Studio Code text editor     
+
+
+## Known Bugs
+No known bugs so far.Contact me if you come across any.

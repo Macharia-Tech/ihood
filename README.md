@@ -64,4 +64,8 @@ The application user is able to:
 
 
 ## Known Bugs
-No known bugs so far.Contact me if you come across any.
+No known bugs so far.Contact me if you come across any @ mitchelaudrey@gmail.com
+
+
+## Support and Contact Details
+For any comments,suggestions,feedback or inquiries about my application,Contact me via email:giftlumumba2@gmail.com

@@ -52,3 +52,12 @@ The application user is able to:
 - Only view details of a single neighborhood.
 - View my profile page.
      
+
+## Technologies Used
+- Python 3.6.6(Django Framework)
+- HTML5
+- CSS3
+- Bootstrap4
+- Postgresql
+- Heroku(Deployment)
+- Visual Studio Code text editor     

@@ -1,5 +1,5 @@
 from django.http import HttpResponse,Http404,HttpResponseRedirect,JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -129,8 +129,9 @@ def home(request):
   '''
   View function that renders users neighbourhood
   '''
-  neighbourhoods = Neighbourhood.objects.filter(user=request.user)
-  return render(request,'home.html',locals())
+  user = get_object_or_404(Profile,user = request.user)
+  hoods = Posts.objects.filter(hood = user.hood)
+  return render(request,'home.html',{"hoods":hoods,"user":user})
 
 @login_required(login_url='/accounts/login/')
 def edit_hood(request,hood_id):

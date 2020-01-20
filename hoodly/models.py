@@ -76,7 +76,7 @@ class Profile(models.Model):
   '''
   bio = models.TextField()
   user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
-  hood = models.OneToOneField(Neighbourhood,on_delete=models.CASCADE,blank=True,null=True)
+  hood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE,blank=True,null=True)
 
   @receiver(post_save, sender=User)
   def create_user_profile(sender, instance, created, **kwargs):
@@ -98,8 +98,7 @@ class Profile(models.Model):
   def update_profile(self):
     self.update
 
-  def __str__(self):
-    return self.bio
+ 
 
 
 class Business(models.Model):
@@ -172,8 +171,6 @@ class Posts(models.Model):
 
   def __str__(self):
     return self.topic
-
-  
 
 class Comments(models.Model):
   '''

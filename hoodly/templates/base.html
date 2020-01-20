@@ -1,43 +1,41 @@
 {% load bootstrap4 %}
-{% load static %}
+{% load staticfiles %}
+{%load static%}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title %}
-    <title>Ihood - {{title}}</title>
-    {% else %}
-      <title> Ihood </title>
-    {% endif %}
-  
-    {% block styles %}
-      {% bootstrap_css %}
-      <link rel="stylesheet" href="{% static 'css/basehoodly.css' %}">
+<html>
 
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-      <link rel="shortcut icon" href="/static/images/hood1.jpeg" type="image/x-icon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-    {% endblock %}
   
+  {%if title%}
+  
+  <title>{{title}}</title>
+  
+  {%endif%}
+  
+  {% block styles %}
+  {% bootstrap_css %}
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="shortcut icon" href="../static/cool1.jpeg" type="image/x-icon">
+  
+  {% endblock %}
   
 </head>
-<style>
-  body{
-    font-family: 'Nunito', sans-serif;
-    background: rgb(231, 231, 231);
 
-  }
-</style>
-<body>
-    {% include "navbar.html"%}
-    
+<body style="background-image: url('https://cdn.pixabay.com/photo/2013/11/23/13/57/boxelder-216372_960_720.jpg'); background-repeat: no-repeat; background-size: cover;">
 
-    {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        {% bootstrap_javascript %}
-    {% endblock %}
+  {% include 'navbar.html'%}
+  
+  {% block content %}  {%endblock%}
+  
+  
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %}
+  {% endblock %}
+  
 </body>
+
 </html>

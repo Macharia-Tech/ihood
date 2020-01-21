@@ -1,17 +1,17 @@
-![pic](/static/home.png)
+<!-- ![pic](./static/home.png)
 
 
-![pic](/static/hood.png)
+![pic](./static/hood.png)
 
 
-![pic](/static/business.png)
+![pic](.static/business.png)
 
 
-![pic](/static/posts.png)
+![pic](.static/posts.png)
 
 
-![pic](/static/post.png)
-
+![pic](.static/post.png)
+ -->
 
 # Ihood
 
